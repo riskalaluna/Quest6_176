@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
@@ -61,18 +62,19 @@ fun MahasiswaFormView (
         Spacer(modifier = Modifier.padding(16.dp))
 
         Row (
-            modifier = Modifier
-            .padding(40.dp)
+            verticalAlignment = Alignment.CenterVertically,
+            //modifier = Modifier
+            //padding(40.dp)
         ) {
-
             Image(
                 painter = painterResource(
                     id = R.drawable.umy
                 ),
-                contentDescription = " "
+                contentDescription = " ",
+                modifier = Modifier.size(15.dp)
             )
             Spacer(modifier = Modifier
-                .padding(8.dp)
+                .padding( start = 16.dp)
             )
 
             Column {
