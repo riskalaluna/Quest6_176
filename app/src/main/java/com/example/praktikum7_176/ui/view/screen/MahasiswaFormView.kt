@@ -194,10 +194,10 @@ fun MahasiswaFormView (
                         .fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ){
-                    Button(onClick = {}) {
+                    Button(onClick = { onBackButtonClicked() }) {
                         Text(text = "Kembali")
                     }
-                    Button(onClick = {}) {
+                    Button(onClick = { onSubmitButtonClicked(listData)}) {
                         Text(text = "Simpan")
                     }
                 }
