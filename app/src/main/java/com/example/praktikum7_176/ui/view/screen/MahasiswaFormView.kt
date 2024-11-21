@@ -73,10 +73,9 @@ fun MahasiswaFormView (
                 contentDescription = " ",
                 modifier = Modifier.size(15.dp)
             )
-            Spacer(modifier = Modifier
-                .padding( start = 16.dp)
-            )
 
+            Spacer(modifier = Modifier
+                .padding( start = 16.dp))
             Column {
                 Text(
                     text = "Universitas Muhammadiyah Yogyakarta",
@@ -92,9 +91,9 @@ fun MahasiswaFormView (
             }
         }
 
+        Spacer(modifier = Modifier.padding(top = 16.dp))
         Box (
             modifier = Modifier
-                .fillMaxSize()
                 .background(
                     color = Color.White,
                     shape = RoundedCornerShape(
@@ -102,6 +101,7 @@ fun MahasiswaFormView (
                         topStart = 15.dp
                     )
                 )
+                .fillMaxSize(),
         ){
             Column (
                 modifier = Modifier
