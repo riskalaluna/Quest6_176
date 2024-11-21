@@ -1,6 +1,7 @@
 package com.example.praktikum7_176.ui.widget
 
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.OutlinedTextField
@@ -42,5 +43,17 @@ fun DynamicSelectTextField(
                 .menuAnchor()
                 .fillMaxWidth()
         )
+
+        ExposedDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false}) {
+            options.forEach{options: String ->
+                DropdownMenuItem(
+                    text = { Text(text = option) },
+                    onClick = {
+                        expanded = false
+                        onValueChangeEvent(option)
+                    }
+                )
+            }
+        }
     }
 }
