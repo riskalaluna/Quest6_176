@@ -1,5 +1,6 @@
 package com.example.praktikum7_176.ui.view.screen
 
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -17,6 +18,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
@@ -40,6 +42,7 @@ import com.example.praktikum7_176.data.RuangKelas
 import com.example.praktikum7_176.model.Mahasiswa
 import com.example.praktikum7_176.ui.widget.DynamicSelectTextField
 
+
 @Composable
 fun RencanaStudyView(
     mahasiswa: Mahasiswa,
@@ -47,10 +50,11 @@ fun RencanaStudyView(
     onBackButtonClicked: () -> Unit
 ) {
     var chosenDropdown by remember  {
-        mutableStateOf("")
+        mutableStateOf(
+            ""
+        )
     }
-    var checked by remember {
-        mutableStateOf(false) }
+    var checked by remember { mutableStateOf(false) }
     var pilihanKelas by remember {
         mutableStateOf("")
     }
@@ -63,16 +67,16 @@ fun RencanaStudyView(
         Row (
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp),
+                .padding(20.dp),
             verticalAlignment = Alignment.CenterVertically
         ){
-            Image(
-                painter = painterResource(id = R.drawable.umy),
-                contentDescription = "",
-                modifier = Modifier
-                    .clip(shape = CircleShape)
-                    .size(50.dp)
-            )
+        Image(
+            painter = painterResource(id = R.drawable.umy),
+            contentDescription = "",
+            modifier = Modifier
+                .clip(shape = CircleShape)
+                .size(50.dp)
+        )
             Spacer(modifier = Modifier.padding(start = 16.dp))
             Column(modifier = Modifier.weight(1f)) {
                 Text(
@@ -106,10 +110,12 @@ fun RencanaStudyView(
                     )
                 )
                 .fillMaxSize()
+
         ) {
-            Column (modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp)
+            Column (
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
             ){
                 Text(text = "Pilih Mata Kuliah Peminatan", fontWeight = FontWeight.Bold)
                 Text(
@@ -117,8 +123,7 @@ fun RencanaStudyView(
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Light
                 )
-                Spacer(
-                    modifier = Modifier.padding(8.dp))
+                Spacer(modifier = Modifier.padding(8.dp))
                 DynamicSelectTextField(
                     selectedValue = chosenDropdown,
                     options = MataKuliah.options,
@@ -128,7 +133,8 @@ fun RencanaStudyView(
                     }
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
-                HorizontalDivider()
+                //HorizontalDivider()
+                Divider()
                 Spacer(modifier = Modifier.padding(8.dp))
                 Text(text = "Pilih Kelas Belajar", fontWeight = FontWeight.Bold)
                 Text(
@@ -141,7 +147,8 @@ fun RencanaStudyView(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ){
-                    RuangKelas.kelas.forEach { data ->
+                    RuangKelas.kelas.forEach {
+                        data ->
                         Row ( verticalAlignment = Alignment.CenterVertically) {
                             RadioButton(
                                 selected = pilihanKelas == data,
@@ -151,11 +158,15 @@ fun RencanaStudyView(
                         }
                     }
                 }
+
                 Spacer(modifier = Modifier.padding(8.dp))
-                HorizontalDivider()
+                Divider()
                 Spacer(modifier = Modifier.padding(8.dp))
                 Text(text = "Klausul Persetujuan Mahasiswa", fontWeight = FontWeight.Bold)
-                Row (verticalAlignment = Alignment.CenterVertically){
+                Row (
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(8.dp)
+                ){
                     Checkbox(
                         checked = checked,
                         onCheckedChange = {checked = it},
@@ -163,11 +174,14 @@ fun RencanaStudyView(
                     )
                     Text(
                         text = "Saya menyetujui setiap pernyataan yang ada tanpa ada paksaan dari pihak manapun.",
-                        fontWeight = FontWeight.Light, fontSize = 10.sp
+                        fontWeight = FontWeight.Light,
+                        fontSize = 10.sp,
+                        modifier = Modifier.padding(start = 8.dp)
                     )
                 }
                 Spacer(modifier = Modifier.padding(8.dp))
-                Row (modifier = Modifier.fillMaxWidth(),
+                Row (
+                    modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ){
                     Button(onClick = { onBackButtonClicked()}) {
@@ -176,12 +190,8 @@ fun RencanaStudyView(
                     Button(onClick = {onSubmitButtonClicked(listData)}, enabled = checked) {
                         Text(text = "Lanjut")
                     }
-
                 }
-
             }
         }
-
     }
-
 }

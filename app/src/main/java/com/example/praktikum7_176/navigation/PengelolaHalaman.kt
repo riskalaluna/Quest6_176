@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -23,10 +24,8 @@ enum class Halaman {
     Matakuliah,
     Tampil
 }
-
 @Composable
-fun MahasiswaApp(
-    modifier: Modifier = Modifier,
+fun MahasiswaApp( modifier: Modifier = Modifier,
     mahasiswaviewmodel: Mahasiswaviewmodel = viewModel(),
     krsViewModel: RencanaStudyViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
@@ -34,7 +33,7 @@ fun MahasiswaApp(
     val mahasiswaUiState = mahasiswaviewmodel.mahasiswaUiState.collectAsState().value
 
     NavHost(
-        navController = NavController,
+        navController = navController,
         startDestination = Halaman.Splash.name,
         modifier = modifier .padding()
     ) {

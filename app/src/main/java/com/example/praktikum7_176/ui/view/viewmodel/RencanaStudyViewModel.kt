@@ -1,8 +1,11 @@
 package com.example.praktikum7_176.ui.view.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.example.praktikum7_176.model.RencanaStudi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
 class RencanaStudyViewModel : ViewModel() {
     private val _krsState = MutableStateFlow(RencanaStudi())

@@ -40,11 +40,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.praktikum7_176.R
 
-@Preview(showBackground = true)
 @Composable
 fun MahasiswaFormView (
-    onSubmitButton: (MutableList<String>) -> Unit,
-    onbackButton: () -> Unit
+    onSubmitButtonClicked: (MutableList<String>) -> Unit,
+    onBackButtonClicked: () -> Unit
 ) {
 
     var nama by remember { mutableStateOf("")    }
@@ -53,21 +52,21 @@ fun MahasiswaFormView (
 
     var listData: MutableList<String> = mutableListOf(nim, nama, email)
     
-    Column (modifier = Modifier
+    Column (
+        modifier = Modifier
         .fillMaxSize()
         .background(
             color = colorResource(
                 id = R.color.primary
             )
-        ), horizontalAlignment = Alignment.CenterHorizontally
+        ),
+        horizontalAlignment = Alignment.CenterHorizontally
 
     ){
         Spacer(modifier = Modifier.padding(16.dp))
 
         Row (
             verticalAlignment = Alignment.CenterVertically,
-            //modifier = Modifier
-            //padding(40.dp)
         ) {
             Image(
                 painter = painterResource(
@@ -77,8 +76,7 @@ fun MahasiswaFormView (
                 modifier = Modifier.size(15.dp)
             )
 
-            Spacer(modifier = Modifier
-                .padding( start = 16.dp))
+            Spacer(modifier = Modifier.padding( start = 16.dp))
             Column {
                 Text(
                     text = "Universitas Muhammadiyah Yogyakarta",
@@ -194,7 +192,8 @@ fun MahasiswaFormView (
                         .fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ){
-                    Button(onClick = { onBackButtonClicked() }) {
+                    Button(
+                        onClick = {onBackButtonClicked ()}) {
                         Text(text = "Kembali")
                     }
                     Button(onClick = { onSubmitButtonClicked(listData)}) {
