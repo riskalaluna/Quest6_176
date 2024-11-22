@@ -1,4 +1,4 @@
-package com.example.praktikum7_176.ui.view
+package com.example.praktikum7_176.ui.view.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
