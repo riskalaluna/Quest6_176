@@ -25,6 +25,7 @@ import com.example.praktikum7_176.R
 import com.example.praktikum7_176.model.Mahasiswa
 import com.example.praktikum7_176.model.RencanaStudi
 
+//menaruh TampilDataView di dalam screen
 @Composable
 fun TampilView(
     mahasiswa: Mahasiswa,
