@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.praktikum7_176.navigation.MahasiswaApp
 import com.example.praktikum7_176.ui.theme.Praktikum7_176Theme
 
 class MainActivity : ComponentActivity() {
@@ -20,10 +21,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             Praktikum7_176Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                    MahasiswaApp(
+                        modifier = Modifier.padding((innerPadding))
                     )
+                    //Greeting( name = "Android", modifier = Modifier.padding(innerPadding)
                 }
             }
         }

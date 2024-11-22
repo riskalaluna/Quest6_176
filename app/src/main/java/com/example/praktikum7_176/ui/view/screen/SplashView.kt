@@ -20,8 +20,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.praktikum7_176.R
 
-
-@Preview(showBackground = true)
 @Composable
 fun SplashView(
     onMulaiButton: () ->Unit,
@@ -33,7 +31,7 @@ fun SplashView(
             horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(R.drawable.umy),
+            painter = painterResource(R.drawable.logoumy),
             contentDescription = null,
             modifier = Modifier
                 .size(150.dp)
@@ -42,7 +40,6 @@ fun SplashView(
         Button(
             onClick = {
                       onMulaiButton() }
-            //modifier = Modifier .fillMaxWidth() .padding(32.dp)
         ) {
             Text(text = "Mulai")
         }

@@ -66,14 +66,15 @@ fun MahasiswaFormView (
         Spacer(modifier = Modifier.padding(16.dp))
 
         Row (
+            modifier = Modifier.padding(15.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Image(
                 painter = painterResource(
-                    id = R.drawable.umy
+                    id = R.drawable.logoumy
                 ),
                 contentDescription = " ",
-                modifier = Modifier.size(15.dp)
+                modifier = Modifier.size(50.dp)
             )
 
             Spacer(modifier = Modifier.padding( start = 16.dp))

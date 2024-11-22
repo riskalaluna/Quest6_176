@@ -71,7 +71,7 @@ fun RencanaStudyView(
             verticalAlignment = Alignment.CenterVertically
         ){
         Image(
-            painter = painterResource(id = R.drawable.umy),
+            painter = painterResource(id = R.drawable.logoumy),
             contentDescription = "",
             modifier = Modifier
                 .clip(shape = CircleShape)
